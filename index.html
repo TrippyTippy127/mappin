@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapping Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-left">
+            <label class="upload-btn">
+                Upload Map Image
+                <input id="imageUpload" type="file" accept="image/*">
+            </label>
+
+            <button id="resetViewBtn" type="button">Reset View</button>
+            <button id="clearPinsBtn" type="button">Clear Pins</button>
+        </div>
+
+        <div class="topbar-right">
+            <span class="hint">
+                Left-drag: Pan / Wheel: Zoom / Right-click: Place Pin
+            </span>
+        </div>
+    </header>
+    
+    <main class="app">
+        <section id="viewport" class="viewport" aria-label="Map Viewport">
+            <div id="scene" class="scene">
+                <img 
+                    id="mapImage" 
+                    class="map-image" 
+                    alt="Uploaded Map"
+                    draggable="false"
+                />
+                <div id="pinsLayer" class="pins-layer" aria-label="Pins layer"></div>
+            </div>
+            
+            <div id="emptyState" class="empty-state">
+                <p>No map image uploaded. Please upload an image to start mapping.</p>
+            </div>
+        </section>
+
+        <aside class="panel" aria-label="Details panel">
+            <h2>Details</h2>
+            <p class="muted"> Later this can show pin notes, map-to-map links, and editing tools</p>
+
+            <div class="debug">
+                <div><strong>Current Map:</strong> <span id="currentMapName">None</span></div>
+                <div><strong>Pins:</strong> <span id="pinCount">0</span></div>
+            </div>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Mapping Tool</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

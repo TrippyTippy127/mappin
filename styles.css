@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #1e1e1e;
+    color: #eee;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background #2b2b2b;
+    border-bottom: 1px solid #444;
+}
+
+.upload-btn input {
+    display: none;
+}
+
+button:hover,
+.upload-btn:hover {
+    background: #555;
+}
+
+.hint {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.app {
+    display: flex;
+    height: calc(100vh - 52px);
+}
+
+.viewport {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    background: #111;
+    border-right: 1px solid #333;
+}
+
+.scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+}
+
+.map-image {
+    display: block;
+    max-width: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.pins-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.empty-state {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.panel h2 {
+    margin-top: 0;
+}
+
+.muted {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.debug {
+    margin-top: 16px;
+    font-size: 13px;
+}
+
